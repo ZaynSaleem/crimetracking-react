@@ -42,7 +42,7 @@ const CrimeApp = () => {
               setData(res.data);
             });
         };
-        console.log(data);
+       
         
         let count = 0;
   return (
@@ -127,9 +127,9 @@ const CrimeApp = () => {
               <tr key={index}>
                 <th scope="row">{++count}</th>
                 <td>{item.id}</td>
-                <td>{item.category}</td>
-                <td>{item.outcome_status.category}</td>
-                <td>{item.outcome_status.date}</td>
+                <td>{item.category ? item.category : "null" }</td>
+                <td>{!item.outcome_status ? "null" : item.outcome_status.category}</td>
+                <td>{!item.outcome_status ? "null" : item.outcome_status.date}</td>
               </tr>
             </tbody>
                 )
